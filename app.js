@@ -1,3 +1,4 @@
+// Installations
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +10,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Configurations
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -19,9 +21,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// Error handlers
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -38,4 +42,5 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+// Server bootup or server export
 module.exports = app;
