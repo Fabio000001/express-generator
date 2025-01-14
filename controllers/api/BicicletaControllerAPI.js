@@ -16,3 +16,9 @@ exports.bicicleta_create = function (req, res) {
         bicicleta: bici
     })
 }
+
+exports.bicicleta_delete = function (req, res) {
+    //También es posible utilizar params para recibir la id mediante la url
+    Bicicleta.removeById(req.body.id);
+    res.status(204).send();
+};
