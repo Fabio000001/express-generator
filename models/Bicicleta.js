@@ -11,6 +11,18 @@ Bicicleta.add = function (bici) {
     this.allBicis.push(bici);
 }
 
+Bicicleta.changeValues = function (bici, nuevo) {
+    return bici = {
+        id: bici.id,
+        color: nuevo.color || bici.color,
+        modelo: nuevo.modelo || bici.modelo,
+        ubicacion: [
+            nuevo.latitud || bici.ubicacion[0],
+            nuevo.longitud || bici.ubicacion[1]
+        ]
+    };
+}
+
 Bicicleta.removeById = function (id) {
     this.allBicis = this.allBicis.filter(bici => bici.id != id);
 }

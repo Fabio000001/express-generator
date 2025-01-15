@@ -17,6 +17,20 @@ exports.bicicleta_create = function (req, res) {
     })
 }
 
+exports.bicicleta_update = function (req, res) {
+    let bici = Bicicleta.allBicis.find(bici => bici.id == req.body.id);
+
+    bici = Bicicleta.changeValues(bici, req.body);
+
+    Bicicleta.removeById(req.body.id);
+    Bicicleta.add(bici);
+    Bicicleta.allBicis.sort((a, b) => a.id - b.id);
+
+    res.status(200).json({
+        bicicleta: bici
+    })
+}
+
 exports.bicicleta_delete = function (req, res) {
     //También es posible utilizar params para recibir la id mediante la url
     Bicicleta.removeById(req.body.id);
