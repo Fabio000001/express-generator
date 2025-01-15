@@ -8,7 +8,7 @@ var favicon = require('serve-favicon');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var bicicletasAPIRouter = require('./routes/api/bicicletas');
+var bicicletasAPIRouter = require('./routes/api/v1/bicicletas');
 
 var app = express();
 
