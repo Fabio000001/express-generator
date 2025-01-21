@@ -19,7 +19,7 @@ let BicicletaControllerAPI = require("../../../controllers/api/v1/BicicletaContr
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Bicicleta'
+ *                 "bicicletas": []
  * /api/bicicletas/create:
  *   post:
  *     summary: Create a new bicycle
@@ -31,7 +31,7 @@ let BicicletaControllerAPI = require("../../../controllers/api/v1/BicicletaContr
  *           schema:
  *             $ref: '#/components/schemas/Bicicleta'
  *     responses:
- *       200:
+ *       201:
  *         description: The created bicycle.
  *         content:
  *           application/json:
