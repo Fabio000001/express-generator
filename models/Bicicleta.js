@@ -1,3 +1,34 @@
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Bicicleta:
+ *       type: object
+ *       required:
+ *         - id
+ *         - color
+ *         - modelo
+ *         - ubicacion
+ *       properties:
+ *         id:
+ *           type: number
+ *           description: The auto-generated id of the bicycle
+ *         color:
+ *           type: string
+ *           description: The color of your bicycle
+ *         modelo:
+ *           type: string
+ *           description: The bicycle's model
+ *         ubicacion:
+ *           type: array<number>
+ *           description: The current ubication
+ *       example:
+ *         id: 1
+ *         color: Rojo
+ *         modelo: Trek
+ *         ubicacion: [28.503789, -13.853296]
+ */
+
 let Bicicleta = function (id, color, modelo, ubicacion) {
     this.id = id;
     this.color = color;

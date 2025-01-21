@@ -22,7 +22,7 @@ let options = {
             },
         ],
     },
-    apis: ["./routes/*.js"],
+    apis: ["./models/*.js", "./routes/api/v1/*.js"],
 };
 
 module.exports = options;
