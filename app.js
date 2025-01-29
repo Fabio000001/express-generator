@@ -7,6 +7,7 @@ var logger = require('morgan');
 var favicon = require('serve-favicon');
 var swaggerJsdoc = require("swagger-jsdoc");
 var swaggerUi = require("swagger-ui-express");
+var cors = require("cors");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -33,6 +34,12 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(specs, { explorer: true })
 );
+
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://fabio000001.github.io/PRPG'], // Permitir solo estos origenes
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
+}));
 
 // Routes
 app.use('/', indexRouter);
