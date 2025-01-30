@@ -1,9 +1,7 @@
 let Bicicleta = require("../../../models/Bicicleta");
 
 exports.bicicleta_list = function (req, res) {
-    res.status(200).json({
-        bicicletas: Bicicleta.allBicis
-    });
+    res.status(200).json(Bicicleta.allBicis);
 };
 
 exports.bicicleta_create = function (req, res) {
@@ -12,9 +10,7 @@ exports.bicicleta_create = function (req, res) {
 
     Bicicleta.add(bici);
 
-    res.status(201).json({
-        bicicleta: bici
-    })
+    res.status(201).json(bici);
 }
 
 exports.bicicleta_update = function (req, res) {
@@ -26,9 +22,7 @@ exports.bicicleta_update = function (req, res) {
     Bicicleta.add(bici);
     Bicicleta.allBicis.sort((a, b) => a.id - b.id);
 
-    res.status(200).json({
-        bicicleta: bici
-    })
+    res.status(200).json(bici);
 }
 
 exports.bicicleta_delete = function (req, res) {
